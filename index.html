@@ -1,0 +1,2639 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dra. Isabela Macêdo | Pneumologista em Ipanema — Foco em Asma | Rio de Janeiro</title>
+    <meta name="description" content="Pneumologista em Ipanema, Rio de Janeiro. Dra. Isabela Macêdo — Foco em Asma e Doenças Respiratórias. Formação UERJ. Rede D'or. Agende.">
+    <meta property="og:title" content="Dra. Isabela Macêdo | Pneumologista em Ipanema — Foco em Asma | Rio de Janeiro">
+    <meta property="og:description" content="Pneumologista em Ipanema, Rio de Janeiro. Dra. Isabela Macêdo — Foco em Asma e Doenças Respiratórias. Formação UERJ. Rede D'or. Agende.">
+    <meta property="og:image" content="https://res.cloudinary.com/dezwlu6p2/image/upload/v1774984218/Design_sem_nome_b7cp9t.webp">
+    <meta property="og:url" content="https://www.isabelamacedopneumologista.com.br">
+    <link rel="canonical" href="https://www.isabelamacedopneumologista.com.br">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --primary: #6f3453;
+            --primary-gradient: linear-gradient(135deg, #6f3453, #8b4b6b);
+            --secondary: #7c563e;
+            --hover: #eebc9e;
+            --tertiary: #484848;
+            --text: #1b1c1b;
+            --bg-page: #f5f3f1;
+            --bg-card: #ffffff;
+            --bg-section: #efedec;
+            --bg-footer: #6f3453;
+            --text-on-primary: #ffffff;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            background-color: var(--bg-page);
+            color: var(--text);
+            font-family: 'Inter', sans-serif;
+        }
+
+        svg {
+            stroke: var(--primary);
+            stroke-width: 1px;
+            fill: none;
+        }
+
+        /* HEADER */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1001;
+            transition: background-color 0.3s ease, box-shadow 0.3s ease;
+            padding: 4vw 6vw;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: transparent;
+        }
+
+        header.scrolled {
+            background-color: rgba(245, 243, 241, 0.95);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+            padding: 3vw 6vw;
+        }
+
+        header.dark-theme {
+            background-color: rgba(111, 52, 83, 0.95);
+        }
+
+        header.dark-theme .logo-name,
+        header.dark-theme .logo-crm,
+        header.dark-theme .nav-link,
+        header.menu-open .logo-name,
+        header.menu-open .logo-crm,
+        header.menu-open .nav-link {
+            color: var(--text-on-primary);
+        }
+        
+        header.dark-theme .hamburger-line,
+        header.menu-open .hamburger-line {
+            background-color: var(--text-on-primary);
+        }
+
+        .logo {
+            display: flex;
+            flex-direction: column;
+            text-decoration: none;
+            z-index: 1001;
+        }
+
+        .logo-name {
+            font-family: 'Playfair Display', serif;
+            font-weight: 500;
+            font-size: 5vw;
+            color: var(--text);
+        }
+
+        .logo-crm {
+            font-family: 'Inter', sans-serif;
+            font-weight: 400;
+            font-size: 2.5vw;
+            letter-spacing: 0.05em;
+            opacity: 0.8;
+            color: var(--text);
+            margin-top: 0.5vw;
+        }
+
+        .desktop-nav {
+            display: none;
+        }
+
+        .hamburger {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            width: 6vw;
+            height: 4vw;
+            cursor: pointer;
+            z-index: 1001;
+        }
+
+        .hamburger-line {
+            width: 100%;
+            height: 1px;
+            background-color: var(--text);
+            transition: transform 0.3s ease, opacity 0.3s ease;
+        }
+
+        .hamburger.active .hamburger-line:nth-child(1) {
+            transform: translateY(1.5vw) rotate(45deg);
+        }
+
+        .hamburger.active .hamburger-line:nth-child(2) {
+            opacity: 0;
+        }
+
+        .hamburger.active .hamburger-line:nth-child(3) {
+            transform: translateY(-1.5vw) rotate(-45deg);
+        }
+
+        .mobile-menu {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            background-color: var(--bg-footer);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 8vw;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s ease;
+            z-index: 1000;
+        }
+
+        .mobile-menu.active {
+            opacity: 1;
+            pointer-events: all;
+        }
+
+        .mobile-nav-link {
+            font-family: 'Inter', sans-serif;
+            font-size: 10vw;
+            color: var(--text-on-primary);
+            text-decoration: none;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            font-weight: 500;
+            transform: translateY(20px);
+            opacity: 0;
+            transition: transform 0.4s ease, opacity 0.4s ease;
+        }
+
+        .mobile-menu.active .mobile-nav-link {
+            transform: translateY(0);
+            opacity: 1;
+        }
+        
+        .mobile-menu.active .mobile-nav-link:nth-child(1) { transition-delay: 0.1s; }
+        .mobile-menu.active .mobile-nav-link:nth-child(2) { transition-delay: 0.2s; }
+        .mobile-menu.active .mobile-nav-link:nth-child(3) { transition-delay: 0.3s; }
+        .mobile-menu.active .mobile-nav-link:nth-child(4) { transition-delay: 0.4s; }
+        .mobile-menu.active .mobile-nav-link:nth-child(5) { transition-delay: 0.5s; }
+        .mobile-menu.active .mobile-nav-link:nth-child(6) { transition-delay: 0.6s; }
+
+        .btn-agendar {
+            display: none;
+        }
+
+        /* HERO MOBILE */
+        .hero {
+            position: relative;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            background-color: var(--bg-page);
+        }
+
+        .hero-image-container {
+            position: relative;
+            width: 100%;
+            height: 60vh;
+        }
+
+        .hero-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0.2;
+            z-index: 1;
+        }
+
+        .hero-photo {
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            object-position: center top;
+            z-index: 2;
+        }
+
+        .hero-gradient {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 20vh;
+            background: linear-gradient(to top, var(--bg-page) 0%, transparent 100%);
+            z-index: 3;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 4;
+            padding: 0 6vw 10vw 6vw;
+            text-align: left;
+            margin-top: -5vh;
+        }
+
+        .hero-eyebrow {
+            font-family: 'Inter', sans-serif;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            color: var(--secondary);
+            font-size: 3vw;
+            margin-bottom: 4vw;
+            display: block;
+        }
+
+        .hero-title {
+            font-family: 'Playfair Display', serif;
+            font-weight: 300;
+            font-size: 10vw;
+            color: var(--text);
+            line-height: 1.15;
+            letter-spacing: -0.02em;
+            margin-bottom: 4vw;
+        }
+
+        .hero-subtitle {
+            font-family: 'Inter', sans-serif;
+            font-weight: 400;
+            color: var(--tertiary);
+            font-size: 4vw;
+            line-height: 1.7;
+            margin-bottom: 6vw;
+        }
+
+        .btn-primary {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background: transparent;
+            color: var(--text-on-primary);
+            text-decoration: none;
+            text-transform: uppercase;
+            font-weight: 600;
+            border-radius: 50px;
+            padding: 4.5vw 10vw;
+            font-size: 4vw;
+            transition: transform 0.3s ease, box-shadow 0.3s ease, color 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            width: fit-content;
+            z-index: 1;
+            box-shadow: 0 0 15px rgba(238, 188, 158, 0.4);
+        }
+
+        .btn-primary::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 150%;
+            height: 300%;
+            background: conic-gradient(transparent, transparent, transparent, var(--hover), #ffffff);
+            transform: translate(-50%, -50%) rotate(0deg);
+            animation: rotateNeon 2s linear infinite;
+            z-index: -2;
+        }
+
+        .btn-primary::after {
+            content: '';
+            position: absolute;
+            inset: 2px;
+            background: var(--primary-gradient);
+            border-radius: 50px;
+            z-index: -1;
+            transition: background 0.3s ease;
+        }
+
+        .btn-primary:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 25px rgba(238, 188, 158, 0.8);
+            color: var(--text);
+        }
+
+        .btn-primary:hover::after {
+            background: var(--hover);
+        }
+
+        .btn-primary svg {
+            stroke: var(--text-on-primary);
+            margin-left: 2vw;
+            width: 5vw;
+            height: 5vw;
+            transition: stroke 0.3s ease;
+            z-index: 2;
+        }
+
+        .btn-primary:hover svg {
+            stroke: var(--text);
+        }
+
+        .dot-pulse {
+            width: 6px;
+            height: 6px;
+            background-color: var(--text-on-primary);
+            border-radius: 50%;
+            margin-right: 3vw;
+            animation: pulse 2s infinite;
+            z-index: 2;
+        }
+
+        .btn-primary:hover .dot-pulse {
+            background-color: var(--text);
+        }
+
+        @keyframes rotateNeon {
+            100% { transform: translate(-50%, -50%) rotate(360deg); }
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); opacity: 1; }
+            50% { transform: scale(1.4); opacity: 0.7; }
+            100% { transform: scale(1); opacity: 1; }
+        }
+
+        .hero-crm {
+            display: block;
+            margin-top: 4vw;
+            font-family: 'Inter', sans-serif;
+            font-weight: 400;
+            color: var(--tertiary);
+            opacity: 0.6;
+            font-size: 3vw;
+        }
+
+        /* MARQUEE */
+        #marquee {
+            background-color: rgba(111, 52, 83, 0.05);
+            border-top: 1px solid rgba(111, 52, 83, 0.05);
+            padding: 4vw 0;
+            overflow: hidden;
+            width: 100%;
+        }
+
+        .marquee-wrapper {
+            display: flex;
+            white-space: nowrap;
+            animation: scrollMarquee 50s linear infinite;
+            width: fit-content;
+        }
+
+        .marquee-text {
+            font-family: 'Inter', sans-serif;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            color: var(--primary);
+            font-weight: 500;
+            font-size: 3.5vw;
+            display: flex;
+            align-items: center;
+        }
+
+        .marquee-text span {
+            margin: 0 3vw;
+            opacity: 0.4;
+        }
+
+        @keyframes scrollMarquee {
+            from { transform: translateX(0); }
+            to { transform: translateX(-25%); } /* Since there are 4 items, -25% moves exactly one full set */
+        }
+
+        /* DESKTOP OVERRIDES */
+        @media (min-width: 768px) {
+            header {
+                padding: 1.5vw 4vw;
+            }
+
+            header.scrolled {
+                padding: 1vw 4vw;
+            }
+
+            .logo-name {
+                font-size: 1.5vw;
+            }
+
+            .logo-crm {
+                font-size: 0.8vw;
+                margin-top: 0.2vw;
+            }
+
+            .hamburger {
+                display: none;
+            }
+
+            .desktop-nav {
+                display: flex;
+                align-items: center;
+                gap: 2.5vw;
+            }
+
+            .nav-link {
+                font-family: 'Inter', sans-serif;
+                text-transform: uppercase;
+                letter-spacing: 0.15em;
+                font-weight: 500;
+                color: var(--text);
+                text-decoration: none;
+                font-size: 0.8vw;
+                transition: color 0.3s ease;
+                display: flex;
+                align-items: center;
+                gap: 0.5vw;
+            }
+
+            .nav-link:hover {
+                color: var(--hover);
+            }
+
+            .nav-link svg {
+                width: 1vw;
+                height: 1vw;
+                stroke: currentColor;
+            }
+
+            .btn-agendar {
+                display: flex;
+                padding: 1vw 2vw;
+                font-size: 0.8vw;
+            }
+
+            .btn-agendar .dot-pulse {
+                margin-right: 0.8vw;
+                width: 6px;
+                height: 6px;
+            }
+
+            /* HERO DESKTOP */
+            .hero {
+                flex-direction: row;
+                height: 100vh;
+                overflow: hidden;
+            }
+
+            .hero-image-container {
+                position: absolute;
+                top: 0;
+                right: 0;
+                width: 50%;
+                height: 100vh;
+            }
+
+            .hero-bg {
+                width: 100vw;
+                left: -50vw; /* Stretch across the whole screen */
+            }
+
+            .hero-photo {
+                width: 100%;
+                object-position: center bottom;
+                left: 0;
+                transform: none;
+            }
+
+            .hero-gradient {
+                height: 35vh;
+                background: linear-gradient(to top, var(--bg-page) 0%, var(--bg-page) 10%, transparent 100%);
+            }
+
+            .hero-content {
+                width: 50%;
+                height: 100vh;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                padding-left: 8vw;
+                padding-right: 4vw;
+                padding-top: 15vh;
+                margin-top: 0;
+            }
+
+            .hero-eyebrow {
+                font-size: 0.9vw;
+                margin-bottom: 1.5vw;
+            }
+
+            .hero-title {
+                font-size: clamp(3rem, 5vw, 5rem);
+                margin-bottom: 1.5vw;
+            }
+
+            .hero-subtitle {
+                font-size: 1.05vw;
+                margin-bottom: 2.5vw;
+                max-width: 80%;
+            }
+
+            .btn-primary {
+                padding: 1.2vw 2.5vw;
+                font-size: 1vw;
+            }
+
+            .btn-primary svg {
+                width: 1.2vw;
+                height: 1.2vw;
+                margin-left: 0.8vw;
+            }
+
+            .btn-primary .dot-pulse {
+                margin-right: 0.8vw;
+            }
+
+            .hero-crm {
+                font-size: 0.7vw;
+                margin-top: 1.5vw;
+            }
+
+            /* MARQUEE DESKTOP */
+            #marquee {
+                padding: 1.2vw 0;
+            }
+
+            .marquee-text {
+                font-size: 1.2vw;
+            }
+
+            .marquee-text span {
+                margin: 0 1.5vw;
+            }
+        }
+
+        /* SECTION 4 - SOBRE */
+        .sobre {
+            padding: 18vw 6vw;
+            background-color: var(--bg-page);
+        }
+        .sobre-eyebrow {
+            font-family: 'Inter', sans-serif;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            color: var(--secondary);
+            font-size: 3vw;
+            text-align: center;
+            display: block;
+            margin-bottom: 8vw;
+        }
+        .sobre-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 10vw;
+        }
+        .sobre-col-left {
+            display: flex;
+            flex-direction: column;
+        }
+        .sobre-photo-container {
+            position: relative;
+            border-radius: 12px;
+            overflow: hidden;
+            aspect-ratio: 3/4;
+            width: 100%;
+        }
+        .sobre-photo {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .sobre-photo-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 50%;
+            background: linear-gradient(to top, rgba(27,28,27,0.6), transparent);
+            z-index: 1;
+        }
+        .sobre-photo-text {
+            position: absolute;
+            bottom: 4vw;
+            left: 4vw;
+            z-index: 2;
+        }
+        .sobre-photo-name-wrapper {
+            display: flex;
+            align-items: center;
+            gap: 2vw;
+            margin-bottom: 1vw;
+        }
+        .sobre-photo-name {
+            font-family: 'Playfair Display', serif;
+            font-weight: 300;
+            color: #ffffff;
+            font-size: 6vw;
+        }
+        .sobre-instagram-icon {
+            width: 5vw;
+            height: 5vw;
+            stroke: #ffffff;
+            transition: stroke 0.3s ease, transform 0.3s ease;
+        }
+        .sobre-instagram-icon:hover {
+            stroke: var(--hover);
+            transform: scale(1.1);
+        }
+        .sobre-photo-role {
+            font-family: 'Inter', sans-serif;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            color: #ffffff;
+            opacity: 0.8;
+            font-size: 2.5vw;
+        }
+        .sobre-card {
+            background-color: var(--bg-card);
+            border-radius: 12px;
+            box-shadow: 0 4px 24px rgba(111,52,83,0.03);
+            padding: 6vw;
+            margin-top: 4vw;
+        }
+        .sobre-card-title {
+            display: flex;
+            align-items: center;
+            gap: 2vw;
+            font-family: 'Playfair Display', serif;
+            color: var(--text);
+            font-size: 5vw;
+            margin-bottom: 3vw;
+        }
+        .sobre-card-title svg {
+            width: 5vw;
+            height: 5vw;
+            stroke: var(--secondary);
+        }
+        .sobre-card-text {
+            font-family: 'Inter', sans-serif;
+            color: var(--tertiary);
+            line-height: 1.6;
+            font-size: 3.5vw;
+        }
+        .sobre-col-right {
+            display: flex;
+            flex-direction: column;
+        }
+        .sobre-title {
+            font-family: 'Playfair Display', serif;
+            color: var(--text);
+            font-size: 8.5vw;
+            margin-bottom: 6vw;
+            text-align: center;
+        }
+        .sobre-bio p {
+            font-family: 'Inter', sans-serif;
+            color: var(--tertiary);
+            line-height: 1.8;
+            font-size: 4vw;
+            margin-bottom: 4vw;
+            text-align: justify;
+        }
+        .sobre-quote {
+            box-shadow: inset 3px 0 0 var(--hover);
+            padding-left: 4vw;
+            margin-top: 8vw;
+            font-family: 'Playfair Display', serif;
+            font-style: italic;
+            color: var(--secondary);
+            font-size: 5vw;
+            line-height: 1.6;
+        }
+        .sobre-btn-container {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            margin-top: 10vw;
+        }
+
+        /* SECTION 5 - FORMAÇÃO E INSTITUIÇÕES */
+        .formacao {
+            padding: 18vw 6vw;
+            background-color: var(--bg-section);
+        }
+        .formacao-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 12vw;
+        }
+        .formacao-title {
+            font-family: 'Playfair Display', serif;
+            color: var(--primary);
+            font-size: 8vw;
+            margin-bottom: 8vw;
+        }
+        .timeline {
+            position: relative;
+            padding-left: 6vw;
+        }
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background-color: rgba(111,52,83,0.1);
+        }
+        .timeline-item {
+            position: relative;
+            margin-bottom: 6vw;
+            padding: 4vw;
+            border-radius: 12px;
+            transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+        }
+        .timeline-item:last-child {
+            margin-bottom: 0;
+        }
+        .timeline-dot {
+            position: absolute;
+            left: -6vw;
+            top: 5vw;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background-color: var(--hover);
+            box-shadow: 0 0 0 4px rgba(238, 188, 158, 0.3);
+            transform: translateX(-50%);
+            transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+        }
+        .timeline-item:hover {
+            transform: translateX(2vw);
+            background-color: var(--bg-card);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+        }
+        .timeline-item:hover .timeline-dot {
+            background-color: var(--primary);
+            box-shadow: 0 0 0 4px rgba(111, 52, 83, 0.2);
+            transform: translateX(-50%) scale(1.3);
+        }
+        .timeline-course {
+            font-family: 'Inter', sans-serif;
+            font-weight: 600;
+            color: var(--text);
+            font-size: 4vw;
+            margin-bottom: 1vw;
+        }
+        .timeline-inst {
+            font-family: 'Inter', sans-serif;
+            color: var(--tertiary);
+            font-size: 3.5vw;
+        }
+        .inst-cards {
+            display: flex;
+            flex-direction: column;
+            gap: 4vw;
+        }
+        .inst-card {
+            background-color: var(--bg-card);
+            border-radius: 16px;
+            padding: 5vw;
+            display: flex;
+            align-items: center;
+            gap: 4vw;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.03);
+            transition: transform 0.3s ease;
+        }
+        .inst-card:hover {
+            transform: translateX(2vw);
+        }
+        .inst-icon-wrapper {
+            width: 12vw;
+            height: 12vw;
+            border-radius: 50%;
+            background-color: var(--bg-page);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+        .inst-icon-wrapper svg {
+            width: 6vw;
+            height: 6vw;
+            stroke: var(--primary);
+        }
+        .inst-info {
+            display: flex;
+            flex-direction: column;
+        }
+        .inst-name {
+            font-family: 'Inter', sans-serif;
+            font-weight: 600;
+            color: var(--text);
+            font-size: 4vw;
+            margin-bottom: 1vw;
+        }
+        .inst-role {
+            font-family: 'Inter', sans-serif;
+            color: var(--tertiary);
+            font-size: 3.5vw;
+        }
+
+        /* REVEAL ANIMATIONS */
+        .reveal-img {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+        .reveal-text {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+            transition-delay: 0.2s;
+        }
+        .reveal-img.active, .reveal-text.active {
+            opacity: 1;
+            transform: none;
+        }
+
+        /* SECTION 6 - SINTOMAS (CARROSSEL 3D) */
+        .sintomas {
+            padding: 18vw 0;
+            background-color: var(--bg-page);
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .sintomas-header {
+            text-align: center;
+            padding: 0 6vw;
+            margin-bottom: 10vw;
+        }
+        .sintomas-title {
+            font-family: 'Playfair Display', serif;
+            color: var(--text);
+            font-size: 8.5vw;
+            margin-bottom: 4vw;
+        }
+        .sintomas-title em {
+            font-style: italic;
+        }
+        .sintomas-subtitle {
+            font-family: 'Inter', sans-serif;
+            color: var(--secondary);
+            font-size: 4vw;
+        }
+        .carousel-container {
+            position: relative;
+            width: 100%;
+            height: 110vw;
+            perspective: 1200px;
+            cursor: grab;
+        }
+        .carousel-container:active {
+            cursor: grabbing;
+        }
+        .carousel-track {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            transform-style: preserve-3d;
+        }
+        .carousel-card {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 70vw;
+            background-color: var(--bg-card);
+            border-radius: 20px;
+            padding: 6vw;
+            box-shadow: 0 10px 30px rgba(111,52,83,0.05);
+            transform: translate(-50%, -50%);
+            transition: box-shadow 0.3s ease;
+            user-select: none;
+            display: flex;
+            flex-direction: column;
+            gap: 4vw;
+        }
+        .card-icon-wrapper {
+            width: 12vw;
+            height: 12vw;
+            border-radius: 14px;
+            background-color: rgba(111,52,83,0.05);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .card-icon-wrapper svg {
+            width: 6vw;
+            height: 6vw;
+            stroke: var(--primary);
+        }
+        .card-text {
+            font-family: 'Inter', sans-serif;
+            color: var(--tertiary);
+            font-size: 3.5vw;
+            line-height: 1.6;
+        }
+        .card-text strong {
+            color: var(--text);
+            font-weight: 600;
+            display: block;
+            margin-bottom: 1vw;
+        }
+        .card-link {
+            font-family: 'Inter', sans-serif;
+            color: var(--primary);
+            font-size: 3.5vw;
+            font-weight: 500;
+            text-decoration: none;
+            margin-top: auto;
+            transition: color 0.3s ease;
+        }
+        .card-link:hover {
+            color: var(--hover);
+        }
+        @keyframes neonPulse {
+            0% { box-shadow: 0 10px 30px rgba(111,52,83,0.05), 0 0 0 0 rgba(111,52,83,0.3); }
+            70% { box-shadow: 0 10px 30px rgba(111,52,83,0.05), 0 0 0 10px rgba(111,52,83,0); }
+            100% { box-shadow: 0 10px 30px rgba(111,52,83,0.05), 0 0 0 0 rgba(111,52,83,0); }
+        }
+        .carousel-card.active {
+            animation: neonPulse 2s infinite;
+        }
+        .carousel-hint {
+            font-family: 'Inter', sans-serif;
+            text-transform: uppercase;
+            letter-spacing: 0.2em;
+            color: var(--secondary);
+            opacity: 0.5;
+            font-size: 2.5vw;
+            margin-top: 6vw;
+        }
+
+        /* SECTION 7 - ASMA */
+        .asma-section {
+            position: relative;
+            padding: 18vw 0;
+            background-color: var(--bg-page);
+            overflow: hidden;
+        }
+        .asma-bg-container {
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            mask-image: linear-gradient(to bottom, transparent, black 10%, black 90%, transparent);
+            -webkit-mask-image: linear-gradient(to bottom, transparent, black 10%, black 90%, transparent);
+            z-index: 0;
+        }
+        .asma-bg-img {
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            object-fit: cover;
+            opacity: 0;
+            animation: crossfade 20s infinite, bgScale 20s infinite linear;
+        }
+        .asma-bg-img:nth-child(2) {
+            animation-delay: 10s, 10s;
+        }
+        .asma-overlay {
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            /* 245, 242, 237 is #f5f2ed */
+            background: linear-gradient(to right, rgba(245, 242, 237, 0.95), rgba(245, 242, 237, 0.5));
+            z-index: 1;
+        }
+        @keyframes crossfade {
+            0%, 100% { opacity: 0; }
+            25%, 75% { opacity: 0.15; }
+        }
+        @keyframes bgScale {
+            0% { transform: scale(1); }
+            100% { transform: scale(1.05); }
+        }
+        .asma-content {
+            position: relative;
+            z-index: 2;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 6vw;
+        }
+        .asma-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 12vw;
+        }
+        .asma-eyebrow {
+            font-family: 'Inter', sans-serif;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            color: var(--primary);
+            font-size: 3.5vw;
+            margin-bottom: 3vw;
+            display: block;
+        }
+        .asma-title {
+            font-family: 'Playfair Display', serif;
+            color: var(--text);
+            font-size: 8.5vw;
+            line-height: 1.1;
+            margin-bottom: 5vw;
+        }
+        .asma-desc {
+            font-family: 'Inter', sans-serif;
+            color: var(--tertiary);
+            font-size: 4vw;
+            line-height: 1.8;
+            margin-bottom: 8vw;
+        }
+        .asma-cards-container {
+            position: relative;
+            height: 180vw;
+        }
+        .scatter-card {
+            position: absolute;
+            width: 100%;
+            background: #fff;
+            border-radius: 16px;
+            padding: 6vw;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            transition: transform 0.5s cubic-bezier(0.25, 1, 0.5, 1), box-shadow 0.5s ease, opacity 0.4s ease;
+            cursor: pointer;
+            z-index: 1;
+            transform-origin: center center;
+            will-change: transform;
+        }
+        .scatter-card.active {
+            z-index: 100 !important;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.15);
+            cursor: default;
+        }
+        .asma-cards-container::after {
+            content: '';
+            position: fixed;
+            top: 0; left: 0; width: 100vw; height: 100vh;
+            background: rgba(245, 242, 237, 0.8);
+            backdrop-filter: blur(5px);
+            -webkit-backdrop-filter: blur(5px);
+            z-index: 50;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.4s ease;
+        }
+        .asma-cards-container.has-active::after {
+            opacity: 1;
+            pointer-events: auto;
+        }
+        .asma-cards-container.has-active .scatter-card:not(.active) {
+            opacity: 0;
+            pointer-events: none;
+        }
+        .scatter-icon {
+            width: 10vw; height: 10vw;
+            background: rgba(111,52,83,0.05);
+            border-radius: 10px;
+            display: flex; align-items: center; justify-content: center;
+            margin-bottom: 3vw;
+        }
+        .scatter-icon svg {
+            width: 5vw; height: 5vw; stroke: var(--primary);
+        }
+        .scatter-title {
+            font-family: 'Inter', sans-serif;
+            font-weight: 600;
+            font-size: 4vw;
+            color: var(--text);
+            margin-bottom: 2vw;
+        }
+        .scatter-desc {
+            font-family: 'Inter', sans-serif;
+            font-size: 3.2vw;
+            color: var(--tertiary);
+            line-height: 1.5;
+        }
+        .scatter-hint {
+            position: absolute;
+            bottom: -8vw;
+            left: 0;
+            width: 100%;
+            text-align: center;
+            font-family: 'Inter', sans-serif;
+            font-size: 3vw;
+            color: var(--secondary);
+            opacity: 0.6;
+            pointer-events: none;
+        }
+        .card-1 { left: 0; top: 0; }
+        .card-2 { left: 0; top: 25%; }
+        .card-3 { left: 0; top: 50%; }
+        .card-4 { left: 0; top: 75%; }
+
+        /* SECTION DEPOIMENTOS */
+        .depoimentos {
+            padding: 18vw 6vw;
+            background-color: #F2E4E1;
+        }
+        .depoimentos-title {
+            font-family: 'Playfair Display', serif;
+            color: var(--text);
+            font-size: 8.5vw;
+            margin-bottom: 8vw;
+            text-align: center;
+            font-weight: 400;
+        }
+        .depoimentos-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 6vw;
+        }
+        .depoimento-card {
+            background-color: #FFF8F6;
+            border-radius: 24px;
+            padding: 8vw;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.03);
+            transition: all 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            display: flex;
+            flex-direction: column;
+        }
+        .depoimento-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.05);
+        }
+        .depoimento-stars {
+            color: #d4a373;
+            margin-bottom: 4vw;
+            display: flex;
+            gap: 2px;
+        }
+        .depoimento-stars svg {
+            width: 4vw;
+            height: 4vw;
+            fill: currentColor;
+        }
+        .depoimento-text {
+            font-family: 'Inter', sans-serif;
+            font-size: 4vw;
+            line-height: 1.6;
+            color: var(--tertiary);
+            margin-bottom: 6vw;
+            flex-grow: 1;
+            transition: color 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+        .depoimento-name {
+            font-family: 'Playfair Display', serif;
+            font-size: 5vw;
+            color: var(--text);
+            font-weight: 600;
+            margin-top: auto;
+        }
+
+        /* SECTION 8 - CONSULTÓRIO */
+        .consultorio {
+            padding: 18vw 0;
+            background-color: var(--bg-section);
+        }
+        .consultorio-header {
+            text-align: center;
+            margin-bottom: 8vw;
+            padding: 0 6vw;
+        }
+        .consultorio-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 8.5vw;
+            color: var(--text);
+            margin-bottom: 3vw;
+        }
+        .consultorio-title span {
+            font-weight: 500;
+        }
+        .consultorio-title em {
+            font-style: italic;
+            font-weight: 400;
+        }
+        .consultorio-subtitle {
+            font-family: 'Inter', sans-serif;
+            color: var(--secondary);
+            font-size: 4vw;
+        }
+        .consultorio-photos {
+            display: flex;
+            flex-direction: column;
+            gap: 4vw;
+            padding: 0 6vw;
+            margin-bottom: 8vw;
+        }
+        .photo-container {
+            border-radius: 20px;
+            overflow: hidden;
+            position: relative;
+            background-color: #eaeaea;
+        }
+        .photo-container img {
+            width: 100%;
+            height: 100%;
+            display: block;
+            object-fit: cover;
+            transition: transform 0.8s cubic-bezier(0.25, 1, 0.5, 1);
+        }
+        .photo-container:hover img {
+            transform: scale(1.03);
+        }
+        .consultorio-info {
+            padding: 0 6vw;
+            display: flex;
+            flex-direction: column;
+            gap: 6vw;
+        }
+        .info-left {
+            display: flex;
+            flex-direction: column;
+            gap: 4vw;
+        }
+        .address-box {
+            display: flex;
+            align-items: flex-start;
+            gap: 3vw;
+        }
+        .address-icon {
+            width: 6vw;
+            height: 6vw;
+            stroke: var(--primary);
+            flex-shrink: 0;
+            margin-top: 0.5vw;
+        }
+        .address-text {
+            font-family: 'Inter', sans-serif;
+            font-size: 3.8vw;
+            line-height: 1.5;
+        }
+        .address-text strong {
+            color: var(--text);
+            font-weight: 600;
+            display: block;
+        }
+        .address-text span {
+            color: var(--secondary);
+        }
+        .consultorio-complement {
+            font-family: 'Inter', sans-serif;
+            font-style: italic;
+            color: var(--secondary);
+            font-size: 3.5vw;
+            line-height: 1.5;
+        }
+        .map-container {
+            width: 100%;
+            border-radius: 16px;
+            overflow: hidden;
+            height: 60vw;
+            background-color: #eaeaea;
+        }
+        .map-container iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+            filter: grayscale(100%);
+            transition: filter 0.5s ease;
+        }
+        .map-container:hover iframe {
+            filter: grayscale(0%);
+        }
+
+        /* SECTION 9 - FAQ */
+        .faq {
+            padding: 18vw 0;
+            background-color: var(--bg-page);
+        }
+        .faq-container {
+            padding: 0 6vw;
+        }
+        .faq-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 8.5vw;
+            color: var(--text);
+            text-align: center;
+            margin-bottom: 10vw;
+        }
+        .accordion {
+            display: flex;
+            flex-direction: column;
+            gap: 4vw;
+        }
+        .accordion-item {
+            border-bottom: 1px solid rgba(111,52,83,0.1);
+            padding-bottom: 4vw;
+        }
+        .accordion-header {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: none;
+            border: none;
+            padding: 0;
+            cursor: pointer;
+            text-align: left;
+        }
+        .accordion-title {
+            font-family: 'Inter', sans-serif;
+            font-weight: 600;
+            font-size: 4vw;
+            color: var(--text);
+            padding-right: 4vw;
+            line-height: 1.4;
+        }
+        .accordion-icon {
+            width: 6vw;
+            height: 6vw;
+            stroke: var(--primary);
+            transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+            flex-shrink: 0;
+        }
+        .accordion-content {
+            max-height: 0;
+            overflow: hidden;
+            opacity: 0;
+            transition: max-height 0.4s cubic-bezier(0.25, 1, 0.5, 1), opacity 0.4s ease;
+        }
+        .accordion-text {
+            font-family: 'Inter', sans-serif;
+            font-size: 3.5vw;
+            color: var(--tertiary);
+            line-height: 1.6;
+            padding-top: 3vw;
+        }
+        .accordion-item.open .accordion-icon {
+            transform: rotate(45deg);
+        }
+        .accordion-item.open .accordion-content {
+            opacity: 1;
+        }
+
+        /* SECTION 10 - CTA FINAL */
+        .cta-final {
+            position: relative;
+            padding: 25vw 6vw;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            min-height: 80vh;
+        }
+        .cta-bg-container {
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            z-index: 0;
+        }
+        .cta-bg-mobile, .cta-bg-desktop {
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            object-fit: cover;
+            animation: kenBurns 20s infinite alternate;
+        }
+        .cta-bg-desktop {
+            display: none;
+        }
+        .cta-overlay {
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background-color: rgba(111, 52, 83, 0.85);
+            z-index: 1;
+        }
+        @keyframes kenBurns {
+            0% { transform: scale(1); }
+            100% { transform: scale(1.05); }
+        }
+        .cta-content {
+            position: relative;
+            z-index: 2;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 6vw;
+            max-width: 800px;
+        }
+        .cta-title {
+            font-family: 'Playfair Display', serif;
+            color: #fff;
+            font-size: 10vw;
+            line-height: 1.1;
+        }
+        .cta-title span {
+            font-weight: 500;
+        }
+        .cta-title em {
+            font-style: italic;
+            font-weight: 400;
+        }
+        .cta-subtitle {
+            font-family: 'Inter', sans-serif;
+            color: rgba(255,255,255,0.9);
+            font-size: 4.5vw;
+            line-height: 1.5;
+        }
+        
+        .reveal-seq {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+        .reveal-seq.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .reveal-seq:nth-child(1) { transition-delay: 0s; }
+        .reveal-seq:nth-child(2) { transition-delay: 0.2s; }
+        .reveal-seq:nth-child(3) { transition-delay: 0.4s; }
+
+        .reveal-card {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+        .reveal-card.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .reveal-card:nth-child(1) { transition-delay: 0.1s; }
+        .reveal-card:nth-child(2) { transition-delay: 0.2s; }
+        .reveal-card:nth-child(3) { transition-delay: 0.3s; }
+        .reveal-card:nth-child(4) { transition-delay: 0.4s; }
+        .reveal-card:nth-child(5) { transition-delay: 0.5s; }
+
+        .reveal-p {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+        .reveal-p.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* DESKTOP OVERRIDES FOR NEW SECTIONS */
+        @media (min-width: 768px) {
+            .sobre {
+                padding: 8vw 6vw;
+            }
+            .sobre-eyebrow {
+                font-size: 0.9vw;
+                margin-bottom: 4vw;
+            }
+            .sobre-grid {
+                grid-template-columns: 40% 50%;
+                justify-content: space-between;
+                gap: 0;
+            }
+            .sobre-photo-text {
+                bottom: 1.5vw;
+                left: 1.5vw;
+            }
+            .sobre-photo-name-wrapper {
+                gap: 0.8vw;
+                margin-bottom: 0.5vw;
+            }
+            .sobre-photo-name {
+                font-size: 1.8vw;
+            }
+            .sobre-instagram-icon {
+                width: 1.5vw;
+                height: 1.5vw;
+            }
+            .sobre-photo-role {
+                font-size: 0.8vw;
+            }
+            .sobre-card {
+                padding: 2.5vw;
+                margin-top: 1.5vw;
+            }
+            .sobre-card-title {
+                gap: 0.8vw;
+                font-size: 1.5vw;
+                margin-bottom: 1vw;
+            }
+            .sobre-card-title svg {
+                width: 1.5vw;
+                height: 1.5vw;
+            }
+            .sobre-card-text {
+                font-size: 1vw;
+            }
+            .sobre-title {
+                font-size: 3vw;
+                margin-bottom: 2.5vw;
+                text-align: left;
+            }
+            .sobre-bio p {
+                font-size: 1.05vw;
+                margin-bottom: 1.5vw;
+                text-align: left;
+            }
+            .sobre-quote {
+                padding-left: 1.5vw;
+                margin-top: 2.5vw;
+                font-size: 1.2vw;
+            }
+            .sobre-btn-container {
+                margin-top: 4vw;
+            }
+            
+            .formacao {
+                padding: 8vw 6vw;
+            }
+            .formacao-grid {
+                grid-template-columns: 1fr 1fr;
+                gap: 8vw;
+            }
+            .formacao-title {
+                font-size: 2.5vw;
+                margin-bottom: 4vw;
+            }
+            .timeline {
+                padding-left: 2vw;
+            }
+            .timeline-item {
+                margin-bottom: 2vw;
+                padding: 1.5vw;
+            }
+            .timeline-item:hover {
+                transform: translateX(1vw);
+            }
+            .timeline-dot {
+                left: -2vw;
+                top: 2.2vw;
+            }
+            .timeline-course {
+                font-size: 1.2vw;
+                margin-bottom: 0.5vw;
+            }
+            .timeline-inst {
+                font-size: 1vw;
+            }
+            .inst-cards {
+                gap: 1.5vw;
+            }
+            .inst-card {
+                padding: 1.5vw;
+                gap: 1.5vw;
+            }
+            .inst-card:hover {
+                transform: translateX(1vw);
+            }
+            .inst-icon-wrapper {
+                width: 4vw;
+                height: 4vw;
+            }
+            .inst-icon-wrapper svg {
+                width: 2vw;
+                height: 2vw;
+            }
+            .inst-name {
+                font-size: 1.2vw;
+                margin-bottom: 0.5vw;
+            }
+            .inst-role {
+                font-size: 1vw;
+            }
+            
+            .sintomas {
+                padding: 8vw 0;
+            }
+            .sintomas-header {
+                margin-bottom: 4vw;
+            }
+            .sintomas-title {
+                font-size: 3.5vw;
+                margin-bottom: 1vw;
+            }
+            .sintomas-subtitle {
+                font-size: 1.2vw;
+            }
+            .carousel-container {
+                height: 28vw;
+            }
+            .carousel-card {
+                width: 22vw;
+                padding: 2.5vw;
+                gap: 1.5vw;
+            }
+            .card-icon-wrapper {
+                width: 4vw;
+                height: 4vw;
+                border-radius: 12px;
+            }
+            .card-icon-wrapper svg {
+                width: 2vw;
+                height: 2vw;
+            }
+            .card-text {
+                font-size: 1vw;
+            }
+            .card-text strong {
+                margin-bottom: 0.5vw;
+            }
+            .card-link {
+                font-size: 1vw;
+            }
+            .carousel-hint {
+                font-size: 0.8vw;
+                margin-top: 2vw;
+            }
+            
+            .asma-section { padding: 8vw 0; }
+            .asma-grid {
+                flex-direction: row;
+                align-items: center;
+                gap: 4vw;
+            }
+            .asma-text-col { width: 45%; }
+            .asma-cards-col { width: 55%; }
+            .asma-eyebrow { font-size: 1vw; margin-bottom: 1vw; }
+            .asma-title { font-size: 3.5vw; margin-bottom: 2vw; }
+            .asma-desc { font-size: 1.1vw; margin-bottom: 3vw; }
+            .asma-cards-container { height: 32vw; }
+            .scatter-card {
+                width: 48%;
+                height: 48%;
+                padding: 2.5vw;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+            }
+            .scatter-icon { width: 3vw; height: 3vw; margin-bottom: 1vw; }
+            .scatter-icon svg { width: 1.5vw; height: 1.5vw; }
+            .scatter-title { font-size: 1.2vw; margin-bottom: 0.5vw; }
+            .scatter-desc { font-size: 0.9vw; }
+            .scatter-hint { font-size: 0.9vw; bottom: -3vw; }
+            
+            .card-1 { left: 0; top: 0; }
+            .card-2 { left: 52%; top: 0; }
+            .card-3 { left: 0; top: 52%; }
+            .card-4 { left: 52%; top: 52%; }
+            
+            /* Depoimentos Desktop */
+            .depoimentos {
+                padding: 8vw 6vw;
+            }
+            .depoimentos-title {
+                font-size: 3.5vw;
+                margin-bottom: 4vw;
+            }
+            .depoimentos-grid {
+                grid-template-columns: repeat(3, 1fr);
+                grid-auto-rows: 1fr;
+                gap: 2vw;
+                max-width: 1200px;
+                margin: 0 auto;
+            }
+            .depoimentos-grid.layout-1 {
+                grid-template-areas: 
+                    "c1 c2 c3"
+                    "c4 c5 c3"
+                    "c6 c6 c6";
+            }
+            .depoimentos-grid.layout-2 {
+                grid-template-areas: 
+                    "c2 c2 c2"
+                    "c1 c4 c5"
+                    "c1 c6 c3";
+            }
+            .depoimentos-grid.layout-3 {
+                grid-template-areas: 
+                    "c4 c5 c1"
+                    "c4 c6 c6"
+                    "c4 c2 c3";
+            }
+            .card-dep-1 { grid-area: c1; }
+            .card-dep-2 { grid-area: c2; }
+            .card-dep-3 { grid-area: c3; }
+            .card-dep-4 { grid-area: c4; }
+            .card-dep-5 { grid-area: c5; }
+            .card-dep-6 { grid-area: c6; }
+            
+            /* Destaques dinâmicos */
+            .depoimentos-grid.layout-1 .card-dep-6,
+            .depoimentos-grid.layout-1 .card-dep-3,
+            .depoimentos-grid.layout-2 .card-dep-2,
+            .depoimentos-grid.layout-2 .card-dep-1,
+            .depoimentos-grid.layout-3 .card-dep-4,
+            .depoimentos-grid.layout-3 .card-dep-6 {
+                background-color: #E8CFC9;
+            }
+            
+            .depoimentos-grid.layout-1 .card-dep-6 .depoimento-text,
+            .depoimentos-grid.layout-1 .card-dep-3 .depoimento-text,
+            .depoimentos-grid.layout-2 .card-dep-2 .depoimento-text,
+            .depoimentos-grid.layout-2 .card-dep-1 .depoimento-text,
+            .depoimentos-grid.layout-3 .card-dep-4 .depoimento-text,
+            .depoimentos-grid.layout-3 .card-dep-6 .depoimento-text {
+                color: #3D3D3D;
+            }
+            
+            .depoimento-card {
+                padding: 3vw;
+                border-radius: 32px;
+            }
+            .depoimento-stars {
+                margin-bottom: 1.5vw;
+            }
+            .depoimento-stars svg {
+                width: 1.2vw;
+                height: 1.2vw;
+            }
+            .depoimento-text {
+                font-size: 1.05vw;
+                margin-bottom: 2vw;
+            }
+            .depoimento-name {
+                font-size: 1.2vw;
+            }
+
+            /* Consultório Desktop */
+            .consultorio { padding: 8vw 0; }
+            .consultorio-header { margin-bottom: 5vw; }
+            .consultorio-title { font-size: 3.5vw; margin-bottom: 1vw; }
+            .consultorio-subtitle { font-size: 1.2vw; }
+            .consultorio-photos { 
+                flex-direction: row; 
+                justify-content: space-between; 
+                align-items: flex-start; 
+                margin-bottom: 6vw; 
+            }
+            .photo-1 { width: 58%; aspect-ratio: 16/9; }
+            .photo-2 { width: 36%; margin-top: 4vw; aspect-ratio: 4/5; }
+            .consultorio-info { 
+                flex-direction: row; 
+                align-items: center; 
+                justify-content: space-between; 
+                gap: 4vw; 
+            }
+            .info-left { width: 40%; gap: 2vw; }
+            .address-box { gap: 1.5vw; }
+            .address-icon { width: 2vw; height: 2vw; margin-top: 0.2vw; }
+            .address-text { font-size: 1.1vw; }
+            .consultorio-complement { font-size: 1vw; }
+            .map-container { width: 55%; height: 22vw; }
+
+            /* FAQ Desktop */
+            .faq { padding: 8vw 0; }
+            .faq-container { max-width: 50vw; margin: 0 auto; padding: 0; }
+            .faq-title { font-size: 3.5vw; margin-bottom: 4vw; }
+            .accordion { gap: 1.5vw; }
+            .accordion-item { padding-bottom: 1.5vw; }
+            .accordion-title { font-size: 1.2vw; }
+            .accordion-icon { width: 1.5vw; height: 1.5vw; }
+            .accordion-text { font-size: 1vw; padding-top: 1vw; }
+
+            /* CTA Final Desktop */
+            .cta-final {
+                padding: 12vw 6vw;
+                min-height: 60vh;
+            }
+            .cta-bg-mobile { display: none; }
+            .cta-bg-desktop { display: block; }
+            .cta-content { gap: 3vw; }
+            .cta-title { font-size: 5vw; }
+            .cta-subtitle { font-size: 1.5vw; }
+        }
+        .cta-buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 4vw;
+            align-items: center;
+            width: 100%;
+        }
+        .btn-instagram {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background: transparent;
+            color: var(--text-on-primary);
+            text-decoration: none;
+            text-transform: uppercase;
+            font-weight: 500;
+            border-radius: 50px;
+            padding: 3vw 8vw;
+            font-size: 3.5vw;
+            border: 1px solid rgba(255,255,255,0.3);
+            transition: background 0.3s ease, border-color 0.3s ease;
+        }
+        .btn-instagram:hover {
+            background: rgba(255,255,255,0.1);
+            border-color: rgba(255,255,255,0.6);
+        }
+        .btn-instagram svg {
+            width: 5vw;
+            height: 5vw;
+            margin-right: 2vw;
+            stroke: var(--text-on-primary);
+        }
+        @media (min-width: 768px) {
+            .cta-buttons {
+                flex-direction: row;
+                gap: 2vw;
+                justify-content: center;
+            }
+            .btn-instagram {
+                padding: 1.2vw 2.5vw;
+                font-size: 1vw;
+            }
+            .btn-instagram svg {
+                width: 1.2vw;
+                height: 1.2vw;
+                margin-right: 0.8vw;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header id="header">
+        
+        <a href="#" class="logo">
+            <span class="logo-name">Dra. Isabela Macêdo</span>
+            <span class="logo-crm">CRM 5201133276 | RQE 52603</span>
+        </a>
+
+        <nav class="desktop-nav">
+            <a href="#sobre" class="nav-link">Sobre</a>
+            <a href="https://www.instagram.com/draisabelamacedopneumo/" target="_blank" class="nav-link">
+                Instagram
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+            </a>
+            <a href="#asma" class="nav-link">Asma</a>
+            <a href="#depoimentos" class="nav-link">Depoimentos</a>
+            <a href="#consultorio" class="nav-link">Consultório</a>
+            <a href="#duvidas" class="nav-link">Dúvidas</a>
+            
+            <a href="https://wa.me/5521992209951?text=Olá, vim pelo site da Dra. Isabela Macêdo, e gostaria de agendar uma consulta" target="_blank" class="btn-primary btn-agendar">
+                <span class="dot-pulse"></span>
+                Agendar
+            </a>
+        </nav>
+
+        <div class="hamburger" id="hamburger">
+            <div class="hamburger-line"></div>
+            <div class="hamburger-line"></div>
+            <div class="hamburger-line"></div>
+        </div>
+    </header>
+
+    <div class="mobile-menu" id="mobileMenu">
+        <a href="#sobre" class="mobile-nav-link">Sobre</a>
+        <a href="https://www.instagram.com/draisabelamacedopneumo/" target="_blank" class="mobile-nav-link">Instagram</a>
+        <a href="#asma" class="mobile-nav-link">Asma</a>
+        <a href="#depoimentos" class="mobile-nav-link">Depoimentos</a>
+        <a href="#consultorio" class="mobile-nav-link">Consultório</a>
+        <a href="#duvidas" class="mobile-nav-link">Dúvidas</a>
+    </div>
+
+    <main>
+        <section class="hero" id="home">
+            <div class="hero-image-container">
+                <img src="https://res.cloudinary.com/dezwlu6p2/image/upload/v1774983791/hf_20260331_190118_07d8f27f-22a1-435e-b8e6-315ed799d51f_dh7c2e.webp" alt="Consultório" class="hero-bg" referrerpolicy="no-referrer">
+                <img src="https://res.cloudinary.com/dezwlu6p2/image/upload/v1774984218/Design_sem_nome_b7cp9t.webp" alt="Dra. Isabela Macêdo" class="hero-photo" referrerpolicy="no-referrer">
+                <div class="hero-gradient"></div>
+            </div>
+            
+            <div class="hero-content">
+                <span class="hero-eyebrow">Pneumologista em Ipanema</span>
+                <h1 class="hero-title">Isabela Macêdo</h1>
+                <p class="hero-subtitle">Pneumologista com atuação no manejo de doenças respiratórias, com <em>foco em asma</em>. Atendimento individualizado, baseado em ciência e ética, para tratar seu problema de forma precisa e eficaz.</p>
+                <a href="https://wa.me/5521992209951?text=Olá, vim pelo site da Dra. Isabela Macêdo, e gostaria de agendar uma consulta" target="_blank" class="btn-primary">
+                    <span class="dot-pulse"></span>
+                    Agendar Consulta
+                </a>
+                <span class="hero-crm">CRM 5201133276 | RQE 52603</span>
+            </div>
+        </section>
+
+        <section id="marquee">
+            <div class="marquee-wrapper">
+                <div class="marquee-text">ASMA <span>•</span> CUIDADOS ESPECIALIZADOS <span>•</span> DIAGNÓSTICO PRECISO <span>•</span> PREVENÇÃO DE CRISES <span>•</span> MANEJO CONTÍNUO <span>•</span> PNEUMOLOGISTA <span>•</span></div>
+                <div class="marquee-text">ASMA <span>•</span> CUIDADOS ESPECIALIZADOS <span>•</span> DIAGNÓSTICO PRECISO <span>•</span> PREVENÇÃO DE CRISES <span>•</span> MANEJO CONTÍNUO <span>•</span> PNEUMOLOGISTA <span>•</span></div>
+                <div class="marquee-text">ASMA <span>•</span> CUIDADOS ESPECIALIZADOS <span>•</span> DIAGNÓSTICO PRECISO <span>•</span> PREVENÇÃO DE CRISES <span>•</span> MANEJO CONTÍNUO <span>•</span> PNEUMOLOGISTA <span>•</span></div>
+                <div class="marquee-text">ASMA <span>•</span> CUIDADOS ESPECIALIZADOS <span>•</span> DIAGNÓSTICO PRECISO <span>•</span> PREVENÇÃO DE CRISES <span>•</span> MANEJO CONTÍNUO <span>•</span> PNEUMOLOGISTA <span>•</span></div>
+            </div>
+        </section>
+        
+        <section class="sobre" id="sobre">
+            <span class="sobre-eyebrow">Sobre</span>
+            
+            <div class="sobre-grid">
+                <div class="sobre-col-left reveal-img">
+                    <div class="sobre-photo-container">
+                        <img src="https://res.cloudinary.com/dezwlu6p2/image/upload/q_auto,f_auto,w_600/v1774562420/IMG_9405_-_Isabela_Gomes_fr6ikw.webp" alt="Dra. Isabela Macêdo" class="sobre-photo" referrerpolicy="no-referrer">
+                        <div class="sobre-photo-overlay"></div>
+                        <div class="sobre-photo-text">
+                            <div class="sobre-photo-name-wrapper">
+                                <span class="sobre-photo-name">Dra. Isabela Macêdo</span>
+                                <a href="https://www.instagram.com/draisabelamacedopneumo/" target="_blank" rel="noopener noreferrer">
+                                    <svg class="sobre-instagram-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+                                </a>
+                            </div>
+                            <span class="sobre-photo-role">Pneumologista</span>
+                        </div>
+                    </div>
+                    
+                    <div class="sobre-card">
+                        <h3 class="sobre-card-title">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                            Atendimento Particular
+                        </h3>
+                        <p class="sobre-card-text">As consultas são realizadas de forma particular, com tempo adequado e atenção individualizada a cada paciente, garantindo uma avaliação clínica completa.<br>É emitido recibo para solicitação de reembolso junto ao plano de saúde.</p>
+                    </div>
+                </div>
+                
+                <div class="sobre-col-right">
+                    <h2 class="sobre-title reveal-p">Prazer, sou a Isabela</h2>
+                    
+                    <div class="sobre-bio">
+                        <p class="reveal-p">Sou médica pneumologista dedicada ao cuidado integral de pacientes adultos, atuando no diagnóstico, tratamento e acompanhamento de doenças respiratórias.</p>
+                        <p class="reveal-p">Acredito que respirar bem é o pilar fundamental para uma vida plena. Minha missão é oferecer um atendimento de excelência, focado em devolver a qualidade de vida e a liberdade para que você possa focar no que realmente importa.</p>
+                        <p class="reveal-p">Com uma formação sólida e contínua, busco aliar o rigor científico a uma escuta atenta e humana, entendendo que cada paciente possui uma história única e necessidades específicas.</p>
+                        <p class="reveal-p">Caminhar ao lado de cada adulto nesse processo, unindo ciência, estratégia e acolhimento, é o que dá sentido ao meu trabalho.</p>
+                    </div>
+                    
+                    <blockquote class="sobre-quote reveal-p">
+                        "Cada consulta é um espaço para entender, com clareza, o que o seu corpo está tentando te dizer."
+                    </blockquote>
+                </div>
+            </div>
+            
+            <div class="sobre-btn-container">
+                <a href="https://wa.me/5521992209951?text=Olá, vim pelo site da Dra. Isabela Macêdo, e gostaria de agendar uma consulta" target="_blank" class="btn-primary">
+                    <span class="dot-pulse"></span>
+                    Agendar Consulta
+                </a>
+            </div>
+        </section>
+
+        <section class="formacao">
+            <div class="formacao-grid">
+                <div class="formacao-col-left reveal-text">
+                    <h2 class="formacao-title">Formação e trajetória</h2>
+                    
+                    <div class="timeline">
+                        <div class="timeline-item">
+                            <div class="timeline-dot"></div>
+                            <h4 class="timeline-course">Medicina</h4>
+                            <p class="timeline-inst">Universidade do Estado do Rio de Janeiro (UERJ)</p>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-dot"></div>
+                            <h4 class="timeline-course">Residência em Clínica Médica</h4>
+                            <p class="timeline-inst">UERJ</p>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-dot"></div>
+                            <h4 class="timeline-course">Residência em Pneumologia e Tisiologia</h4>
+                            <p class="timeline-inst">UERJ</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="formacao-col-right reveal-text">
+                    <h2 class="formacao-title">Instituições onde atuo</h2>
+                    
+                    <div class="inst-cards">
+                        <div class="inst-card">
+                            <div class="inst-icon-wrapper">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 21h18"></path><path d="M5 21V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v16"></path><path d="M12 10v4"></path><path d="M10 12h4"></path></svg>
+                            </div>
+                            <div class="inst-info">
+                                <h4 class="inst-name">Hospital Quinta D'or</h4>
+                                <p class="inst-role">Médica da Equipe de Pneumologia</p>
+                            </div>
+                        </div>
+                        <div class="inst-card">
+                            <div class="inst-icon-wrapper">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 21h18"></path><path d="M5 21V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v16"></path><path d="M12 10v4"></path><path d="M10 12h4"></path></svg>
+                            </div>
+                            <div class="inst-info">
+                                <h4 class="inst-name">Hospital Caxias D'or</h4>
+                                <p class="inst-role">Médica da Equipe de Pneumologia</p>
+                            </div>
+                        </div>
+                        <div class="inst-card">
+                            <div class="inst-icon-wrapper">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 21h18"></path><path d="M5 21V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v16"></path><path d="M12 10v4"></path><path d="M10 12h4"></path></svg>
+                            </div>
+                            <div class="inst-info">
+                                <h4 class="inst-name">Hospital Glória D'or</h4>
+                                <p class="inst-role">Médica da Equipe de Pneumologia</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section class="sintomas" id="sintomas">
+            <div class="sintomas-header reveal-text">
+                <h2 class="sintomas-title">Quando procurar uma <em>pneumologista?</em></h2>
+                <p class="sintomas-subtitle">Sinais que merecem atenção especializada.</p>
+            </div>
+            
+            <div class="carousel-container reveal-img">
+                <div class="carousel-track">
+                    <div class="carousel-card">
+                        <div class="card-icon-wrapper">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v5"/><path d="M9 10a3 3 0 0 0-3 3v3a5 5 0 0 0 10 0v-3a3 3 0 0 0-3-3"/><path d="M5 10c-1.5 1-2 2.5-2 4"/><path d="M19 10c1.5 1 2 2.5 2 4"/></svg>
+                        </div>
+                        <p class="card-text"><strong>Tosse persistente</strong> — tosse crônica que não melhora, podendo indicar asma, refluxo ou outras condições.</p>
+                        <a href="https://wa.me/5521992209951?text=Olá, vim pelo site da Dra. Isabela Macêdo, e gostaria de agendar uma avaliação" target="_blank" class="card-link">Agendar avaliação &rarr;</a>
+                    </div>
+                    <div class="carousel-card">
+                        <div class="card-icon-wrapper">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M17.7 7.7a2.5 2.5 0 1 1 1.8 4.3H2"/><path d="M9.6 4.6A2 2 0 1 1 11 8H2"/><path d="M12.6 19.4A2 2 0 1 0 14 16H2"/></svg>
+                        </div>
+                        <p class="card-text"><strong>Falta de ar</strong> — dificuldade para respirar em atividades cotidianas ou mesmo em repouso.</p>
+                        <a href="https://wa.me/5521992209951?text=Olá, vim pelo site da Dra. Isabela Macêdo, e gostaria de agendar uma avaliação" target="_blank" class="card-link">Agendar avaliação &rarr;</a>
+                    </div>
+                    <div class="carousel-card">
+                        <div class="card-icon-wrapper">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M10 4a4 4 0 0 0-4 4v4a6 6 0 0 0 12 0V8a4 4 0 0 0-4-4"/><path d="M12 18v4"/><path d="M10 22h4"/><circle cx="12" cy="11" r="2"/><path d="M16 11a4 4 0 0 1-8 0"/></svg>
+                        </div>
+                        <p class="card-text"><strong>Chiado no peito</strong> — sibilância recorrente que pode ser sinal de asma, bronquite ou alergias.</p>
+                        <a href="https://wa.me/5521992209951?text=Olá, vim pelo site da Dra. Isabela Macêdo, e gostaria de agendar uma avaliação" target="_blank" class="card-link">Agendar avaliação &rarr;</a>
+                    </div>
+                    <div class="carousel-card">
+                        <div class="card-icon-wrapper">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12h6"/><path d="M12 9v6"/></svg>
+                        </div>
+                        <p class="card-text"><strong>Infecções respiratórias de repetição</strong> — pneumonias e bronquites frequentes merecem investigação detalhada.</p>
+                        <a href="https://wa.me/5521992209951?text=Olá, vim pelo site da Dra. Isabela Macêdo, e gostaria de agendar uma avaliação" target="_blank" class="card-link">Agendar avaliação &rarr;</a>
+                    </div>
+                    <div class="carousel-card">
+                        <div class="card-icon-wrapper">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 12H2"/><path d="M22 12h-1"/><path d="M18 8v8"/><path d="M7 8v8"/><line x1="3" y1="3" x2="21" y2="21"/></svg>
+                        </div>
+                        <p class="card-text"><strong>Quero parar de fumar</strong> — acompanhamento especializado e acolhedor para o tratamento do tabagismo.</p>
+                        <a href="https://wa.me/5521992209951?text=Olá, vim pelo site da Dra. Isabela Macêdo, e gostaria de agendar uma avaliação" target="_blank" class="card-link">Agendar avaliação &rarr;</a>
+                    </div>
+                    <div class="carousel-card">
+                        <div class="card-icon-wrapper">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+                        </div>
+                        <p class="card-text"><strong>Alterações em tomografia de tórax ou RX</strong> — avaliação detalhada de nódulos, manchas ou outras alterações em exames de imagem.</p>
+                        <a href="https://wa.me/5521992209951?text=Olá, vim pelo site da Dra. Isabela Macêdo, e gostaria de agendar uma avaliação" target="_blank" class="card-link">Agendar avaliação &rarr;</a>
+                    </div>
+                </div>
+            </div>
+            
+            <span class="carousel-hint reveal-text">Arraste para o lado</span>
+        </section>
+
+        <section class="asma-section" id="asma">
+            <div class="asma-bg-container">
+                <img src="https://res.cloudinary.com/dezwlu6p2/image/upload/q_auto:eco,f_auto,w_600/v1774641138/Gemini_Generated_Image_qpeet8qpeet8qpee_troeza.webp" alt="Background Asma 1" class="asma-bg-img" referrerpolicy="no-referrer">
+                <img src="https://res.cloudinary.com/dezwlu6p2/image/upload/q_auto:eco,f_auto,w_600/v1774641141/Lungs_shape_with_202603271649_p1suku.webp" alt="Background Asma 2" class="asma-bg-img" referrerpolicy="no-referrer">
+                <div class="asma-overlay"></div>
+            </div>
+            
+            <div class="asma-content">
+                <div class="asma-grid">
+                    <div class="asma-text-col reveal-text">
+                        <span class="asma-eyebrow">Foco Principal</span>
+                        <h2 class="asma-title">Asma:<br>Cuidado Especializado</h2>
+                        <p class="asma-desc">A asma é uma condição respiratória crônica, mas com o acompanhamento médico correto, ela não deve ditar as regras da sua vida. Meu foco é investigar a fundo os seus gatilhos, ajustar a medicação com precisão e criar um plano de ação para que você recupere o controle absoluto da sua respiração.</p>
+                        <a href="https://wa.me/5521992209951?text=Olá, vim pelo site da Dra. Isabela Macêdo, e gostaria de agendar uma avaliação para asma" target="_blank" class="btn-primary">
+                            <span class="btn-content">
+                                <span class="dot-pulse"></span>
+                                Agendar Avaliação
+                            </span>
+                        </a>
+                    </div>
+                    
+                    <div class="asma-cards-col reveal-img">
+                        <div class="asma-cards-container">
+                            <div class="scatter-card card-1">
+                                <div class="scatter-icon">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+                                </div>
+                                <h3 class="scatter-title">Diagnóstico Preciso</h3>
+                                <p class="scatter-desc">Avaliação clínica e exames para entender o grau exato da inflamação.</p>
+                            </div>
+                            
+                            <div class="scatter-card card-2">
+                                <div class="scatter-icon">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                                </div>
+                                <h3 class="scatter-title">Plano de Ação</h3>
+                                <p class="scatter-desc">Estratégias claras para o dia a dia, devolvendo a capacidade de respirar.</p>
+                            </div>
+                            
+                            <div class="scatter-card card-3">
+                                <div class="scatter-icon">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+                                </div>
+                                <h3 class="scatter-title">Manejo Contínuo</h3>
+                                <p class="scatter-desc">Acompanhamento médico prolongado para garantir que seu tratamento evolua com você.</p>
+                            </div>
+                            
+                            <div class="scatter-card card-4">
+                                <div class="scatter-icon">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M12 8v4"/><path d="M12 16h.01"/></svg>
+                                </div>
+                                <h3 class="scatter-title">Prevenção de Crises</h3>
+                                <p class="scatter-desc">Identificação de sintomas precoces e intervenção rápida antes que a situação agrave.</p>
+                            </div>
+                            
+                            <span class="scatter-hint">Clique em um card para dar destaque</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="depoimentos" id="depoimentos">
+            <h2 class="depoimentos-title reveal-text">O que dizem sobre mim</h2>
+            <div class="depoimentos-grid layout-1" id="depoimentosGrid">
+                <div class="depoimento-card card-dep-1 reveal-p">
+                    <div class="depoimento-stars">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                    </div>
+                    <p class="depoimento-text">A consulta com a doutora foi muito produtiva, tudo bem esclarecido.<br>Dra. Isabela é uma profissional bastante atenta à necessidade do paciente.<br>Parabéns</p>
+                    <span class="depoimento-name">Valquiria Rocha</span>
+                </div>
+                
+                <div class="depoimento-card card-dep-2 reveal-p">
+                    <div class="depoimento-stars">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                    </div>
+                    <p class="depoimento-text">Isabela é uma médica muito completa. A consulta sanou todas as minhas dúvidas , descobriu o que eu tinha e já me sinto MUITO melhor!</p>
+                    <span class="depoimento-name">Beatriz Gomes</span>
+                </div>
+
+                <div class="depoimento-card card-dep-3 reveal-p">
+                    <div class="depoimento-stars">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                    </div>
+                    <p class="depoimento-text">Muito cuidadosa e atenciosa durante toda a consulta. Me senti realmente escutada e examinada com atenção, o que fez toda a diferença. Respondeu às minhas dúvidas e inseguranças com explicações claras, o que me deixou muito segura quanto à sua conduta. Além disso, é extremamente humana e acolhedora. É raro encontrar profissionais tão comprometidos com o cuidado das pessoas.</p>
+                    <span class="depoimento-name">Gabrielle Melo</span>
+                </div>
+
+                <div class="depoimento-card card-dep-4 reveal-p">
+                    <div class="depoimento-stars">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                    </div>
+                    <p class="depoimento-text">Drª Isabela é muito atenciosa! Desde o ano passado (2025) cuida da minha avó, após um quadro respiratório severo - uma idosa que passou pela tuberculose e cerca de oito pneumonias ao longo da vida e que confia plenamente na sua nova médica. Eu mesma tenho acompanhamento dela e gosto da sinceridade e dos bons direcionamentos. Necessária em meio à dificuldade de encontrar bons especialistas. Excelente profissional!</p>
+                    <span class="depoimento-name">Joyce Freitas</span>
+                </div>
+
+                <div class="depoimento-card card-dep-5 reveal-p">
+                    <div class="depoimento-stars">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                    </div>
+                    <p class="depoimento-text">A Dra é maravilhosa! Paciente, ouve com atenção, e muito prestativa. Me ajudou muito com a minha pneumonia recorrente e a minha sinusite crônica. Indico para todos!!!</p>
+                    <span class="depoimento-name">Rafaella Alves</span>
+                </div>
+
+                <div class="depoimento-card card-dep-6 reveal-p">
+                    <div class="depoimento-stars">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                    </div>
+                    <p class="depoimento-text">“Excelente pneumologista! Muito atenciosa, explica tudo com clareza e demonstra verdadeiro cuidado com o paciente. Consulta completa e atendimento humanizado. Recomendo!”</p>
+                    <span class="depoimento-name">Ana Victoria</span>
+                </div>
+            </div>
+        </section>
+
+        <section class="consultorio" id="consultorio">
+            <div class="consultorio-header reveal-text">
+                <h2 class="consultorio-title"><span>O</span> <em>Consultório</em></h2>
+                <p class="consultorio-subtitle">Ipanema — no coração da zona sul carioca.</p>
+            </div>
+            
+            <div class="consultorio-photos reveal-img">
+                <div class="photo-container photo-1">
+                    <img src="https://res.cloudinary.com/dezwlu6p2/image/upload/q_auto,f_auto,w_600/v1774562420/4D5C18EA-FE82-41E7-AC7D-187A5601A496_-_Isabela_Gomes_odqrw9.webp" alt="Consultório Dra. Isabela Macêdo" referrerpolicy="no-referrer">
+                </div>
+                <div class="photo-container photo-2">
+                    <img src="https://res.cloudinary.com/dezwlu6p2/image/upload/q_auto,f_auto,w_600/v1774562420/IMG_6260_-_Isabela_Gomes_ecqwkl.webp" alt="Detalhe do Consultório" referrerpolicy="no-referrer">
+                </div>
+            </div>
+            
+            <div class="consultorio-info reveal-text">
+                <div class="info-left">
+                    <div class="address-box">
+                        <svg class="address-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+                        <p class="address-text">
+                            <strong>Rua Visconde de Pirajá, 414 — Sala 608</strong>
+                            <span>Ipanema, Rio de Janeiro — RJ</span>
+                        </p>
+                    </div>
+                    <p class="consultorio-complement">Ambiente acolhedor, projetado para a melhor experiência durante sua consulta.</p>
+                </div>
+                
+                <div class="map-container">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3672.7719748682977!2d-43.20658408441407!3d-22.983424146747185!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9bd501c5ccfc73%3A0x6b1cfb6a9c1e28be!2sR.%20Visc.%20de%20Piraj%C3%A1%2C%20414%20-%20Ipanema%2C%20Rio%20de%20Janeiro%20-%20RJ%2C%2022410-002!5e0!3m2!1spt-BR!2sbr!4v1689000000000!5m2!1spt-BR!2sbr" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </div>
+        </section>
+
+        <section class="faq" id="duvidas">
+            <div class="faq-container reveal-text">
+                <h2 class="faq-title">Dúvidas Frequentes</h2>
+                <div class="accordion">
+                    <div class="accordion-item reveal-card">
+                        <button class="accordion-header">
+                            <span class="accordion-title">Quais doenças a pneumologista trata?</span>
+                            <svg class="accordion-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+                        </button>
+                        <div class="accordion-content">
+                            <p class="accordion-text">Doenças do sistema respiratório como asma, DPOC, bronquite, pneumonia, tosse crônica, apneia do sono, alergias respiratórias, doenças intersticiais pulmonares e outras condições dos pulmões e vias aéreas.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="accordion-item reveal-card">
+                        <button class="accordion-header">
+                            <span class="accordion-title">Como funciona a primeira consulta?</span>
+                            <svg class="accordion-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+                        </button>
+                        <div class="accordion-content">
+                            <p class="accordion-text">A Dra. Isabela realiza avaliação clínica detalhada com escuta atenta, exame físico direcionado e, quando necessário, solicitação de exames complementares para diagnóstico preciso.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="accordion-item reveal-card">
+                        <button class="accordion-header">
+                            <span class="accordion-title">A Dra. Isabela atende por convênio?</span>
+                            <svg class="accordion-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+                        </button>
+                        <div class="accordion-content">
+                            <p class="accordion-text">As consultas são realizadas de forma particular, com tempo e atenção dedicados a cada paciente, garantindo uma avaliação clínica completa e individualizada.<br>É emitido recibo para reembolso junto ao plano de saúde.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="accordion-item reveal-card">
+                        <button class="accordion-header">
+                            <span class="accordion-title">Onde fica o consultório?</span>
+                            <svg class="accordion-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+                        </button>
+                        <div class="accordion-content">
+                            <p class="accordion-text">Rua Visconde de Pirajá, 414, Sala 608 — Ipanema, Rio de Janeiro. Fácil acesso na zona sul.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="accordion-item reveal-card">
+                        <button class="accordion-header">
+                            <span class="accordion-title">Como agendo uma consulta?</span>
+                            <svg class="accordion-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+                        </button>
+                        <div class="accordion-content">
+                            <p class="accordion-text">Agende pelo WhatsApp clicando no botão de agendamento nesta página.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="cta-final" id="agendar" data-theme="dark">
+            <div class="cta-bg-container">
+                <img src="https://res.cloudinary.com/dezwlu6p2/image/upload/q_auto,f_auto,w_600/v1774645026/Female_doctor_with_202603271508_no0edg.jpg" alt="Dra. Isabela Macêdo" class="cta-bg-mobile" referrerpolicy="no-referrer">
+                <img src="https://res.cloudinary.com/dezwlu6p2/image/upload/q_auto,f_auto,w_1200/v1774645026/Female_doctor_with_202603271508_no0edg.jpg" alt="Dra. Isabela Macêdo" class="cta-bg-desktop" referrerpolicy="no-referrer">
+                <div class="cta-overlay"></div>
+            </div>
+            
+            <div class="cta-content">
+                <h2 class="cta-title reveal-seq"><span>Respire com</span> <em>confiança.</em></h2>
+                <p class="cta-subtitle reveal-seq">Agende sua consulta com a Dra. Isabela Macêdo.</p>
+                <div class="cta-buttons reveal-seq">
+                    <a href="https://wa.me/5521992209951?text=Olá, vim pelo site da Dra. Isabela Macêdo, e gostaria de agendar uma consulta" target="_blank" class="btn-primary">
+                        <span class="dot-pulse"></span>
+                        Agendar pelo WhatsApp
+                    </a>
+                    <a href="https://www.instagram.com/draisabelamacedopneumo/" target="_blank" class="btn-instagram">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+                        Siga no Instagram
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Future sections will go here -->
+    </main>
+
+    <script>
+        window.addEventListener('scroll', () => {
+            const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+
+            // Header Scrolled State
+            const header = document.getElementById('header');
+            if (winScroll > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+            
+            // Check for dark theme sections (to be implemented in future sections)
+            const darkSections = document.querySelectorAll('[data-theme="dark"]');
+            let isDark = false;
+            
+            darkSections.forEach(section => {
+                const rect = section.getBoundingClientRect();
+                // If the top of the section is above the header bottom, and bottom is below header top
+                if (rect.top <= 80 && rect.bottom >= 0) {
+                    isDark = true;
+                }
+            });
+            
+            if (isDark) {
+                header.classList.add('dark-theme');
+            } else {
+                header.classList.remove('dark-theme');
+            }
+        });
+
+        // Mobile Menu Toggle
+        const hamburger = document.getElementById('hamburger');
+        const mobileMenu = document.getElementById('mobileMenu');
+        const mobileLinks = document.querySelectorAll('.mobile-nav-link');
+
+        function toggleMenu() {
+            hamburger.classList.toggle('active');
+            mobileMenu.classList.toggle('active');
+            
+            const header = document.getElementById('header');
+            header.classList.toggle('menu-open');
+            
+            if (mobileMenu.classList.contains('active')) {
+                document.body.style.overflow = 'hidden';
+            } else {
+                document.body.style.overflow = '';
+            }
+        }
+
+        hamburger.addEventListener('click', toggleMenu);
+
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', toggleMenu);
+        });
+
+        // Reveal Animations
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.05
+        };
+
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.reveal-img, .reveal-text, .reveal-seq, .reveal-card, .reveal-p').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Carousel 3D Logic
+        const track = document.querySelector('.carousel-track');
+        const cards = document.querySelectorAll('.carousel-card');
+        const container = document.querySelector('.carousel-container');
+        
+        let currentProgress = 3; 
+        let targetProgress = 3;
+        let isDragging = false;
+        let hasDragged = false;
+        let startX = 0;
+        let startProgress = 0;
+
+        const getSpacing = () => window.innerWidth >= 768 ? 280 : 180;
+        const getZDepth = () => window.innerWidth >= 768 ? 140 : 160;
+        const getRotate = () => window.innerWidth >= 768 ? 8 : 10;
+
+        function updateCarousel() {
+            currentProgress += (targetProgress - currentProgress) * 0.15;
+            
+            const spacing = getSpacing();
+            const zDepth = getZDepth();
+            const rotateAngle = getRotate();
+
+            cards.forEach((card, i) => {
+                let rel = (i - currentProgress) % 6;
+                if (rel > 3) rel -= 6;
+                if (rel < -3) rel += 6;
+
+                const absRel = Math.abs(rel);
+                
+                const translateX = rel * spacing;
+                const translateZ = -absRel * zDepth;
+                const rotateY = -rel * rotateAngle;
+                const opacity = Math.max(0.15, 1 - absRel * 0.45);
+                const zIndex = Math.round(100 - absRel * 10);
+                const scale = absRel < 0.1 ? 1.08 : 1;
+
+                card.style.transform = `translate(-50%, -50%) translateX(${translateX}px) translateZ(${translateZ}px) rotateY(${rotateY}deg) scale(${scale})`;
+                card.style.opacity = opacity;
+                card.style.zIndex = zIndex;
+
+                if (absRel < 0.1) {
+                    card.classList.add('active');
+                } else {
+                    card.classList.remove('active');
+                }
+            });
+
+            requestAnimationFrame(updateCarousel);
+        }
+
+        requestAnimationFrame(updateCarousel);
+
+        function onDragStart(e) {
+            isDragging = true;
+            hasDragged = false;
+            startX = e.type.includes('mouse') ? e.clientX : e.touches[0].clientX;
+            startProgress = targetProgress;
+            container.style.cursor = 'grabbing';
+        }
+
+        function onDragMove(e) {
+            if (!isDragging) return;
+            const currentX = e.type.includes('mouse') ? e.clientX : e.touches[0].clientX;
+            const deltaX = currentX - startX;
+            if (Math.abs(deltaX) > 5) {
+                hasDragged = true;
+            }
+            targetProgress = startProgress - deltaX / getSpacing();
+        }
+
+        function onDragEnd() {
+            if (!isDragging) return;
+            isDragging = false;
+            targetProgress = Math.round(targetProgress);
+            container.style.cursor = 'grab';
+        }
+
+        if (container) {
+            container.addEventListener('mousedown', onDragStart);
+            window.addEventListener('mousemove', onDragMove);
+            window.addEventListener('mouseup', onDragEnd);
+
+            container.addEventListener('touchstart', onDragStart, {passive: true});
+            window.addEventListener('touchmove', onDragMove, {passive: true});
+            window.addEventListener('touchend', onDragEnd);
+        }
+
+        cards.forEach((card, i) => {
+            card.addEventListener('click', (e) => {
+                if (hasDragged) {
+                    e.preventDefault();
+                    return;
+                }
+                
+                let diff = (i - Math.round(targetProgress)) % 6;
+                if (diff > 3) diff -= 6;
+                if (diff < -3) diff += 6;
+                
+                targetProgress = Math.round(targetProgress) + diff;
+            });
+        });
+
+        document.querySelectorAll('.card-link').forEach(link => {
+            link.addEventListener('click', (e) => {
+                if (hasDragged) {
+                    e.preventDefault();
+                }
+            });
+        });
+
+        // Scattered Cards Logic
+        const scatterContainer = document.querySelector('.asma-cards-container');
+        const scatterCards = document.querySelectorAll('.scatter-card');
+
+        if (scatterContainer && scatterCards.length > 0) {
+            const closeCards = () => {
+                scatterCards.forEach(c => {
+                    c.classList.remove('active');
+                    c.style.transform = '';
+                });
+                scatterContainer.classList.remove('has-active');
+                document.body.style.overflow = '';
+                document.body.style.paddingRight = '';
+            };
+
+            scatterCards.forEach(card => {
+                card.addEventListener('click', (e) => {
+                    e.stopPropagation(); 
+                    if (card.classList.contains('active')) {
+                        closeCards();
+                    } else {
+                        // Reset others
+                        scatterCards.forEach(c => {
+                            c.classList.remove('active');
+                            c.style.transform = '';
+                        });
+                        
+                        // Calculate transform to center of viewport
+                        const rect = card.getBoundingClientRect();
+                        const cardCenterX = rect.left + rect.width / 2;
+                        const cardCenterY = rect.top + rect.height / 2;
+                        const viewportCenterX = window.innerWidth / 2;
+                        const viewportCenterY = window.innerHeight / 2;
+                        
+                        const translateX = viewportCenterX - cardCenterX;
+                        const translateY = viewportCenterY - cardCenterY;
+                        const scale = window.innerWidth >= 768 ? 1.3 : 1.05;
+                        
+                        card.classList.add('active');
+                        card.style.transform = `translate(${translateX}px, ${translateY}px) scale(${scale})`;
+                        scatterContainer.classList.add('has-active');
+                        
+                        // Prevent background scrolling
+                        const scrollbarWidth = window.innerWidth - document.documentElement.clientWidth;
+                        document.body.style.overflow = 'hidden';
+                        document.body.style.paddingRight = `${scrollbarWidth}px`;
+                    }
+                });
+            });
+
+            document.addEventListener('click', (e) => {
+                if (!e.target.closest('.scatter-card')) {
+                    closeCards();
+                }
+            });
+        }
+
+        // Depoimentos Dynamic Grid
+        const depoimentosGrid = document.getElementById('depoimentosGrid');
+        if (depoimentosGrid) {
+            let currentLayout = 1;
+            setInterval(() => {
+                depoimentosGrid.classList.remove(`layout-${currentLayout}`);
+                currentLayout = currentLayout >= 3 ? 1 : currentLayout + 1;
+                depoimentosGrid.classList.add(`layout-${currentLayout}`);
+            }, 5000);
+        }
+
+        // FAQ Accordion Logic
+        const accordionItems = document.querySelectorAll('.accordion-item');
+        
+        accordionItems.forEach(item => {
+            const header = item.querySelector('.accordion-header');
+            const content = item.querySelector('.accordion-content');
+            
+            header.addEventListener('click', () => {
+                const isOpen = item.classList.contains('open');
+                
+                // Close all
+                accordionItems.forEach(otherItem => {
+                    otherItem.classList.remove('open');
+                    otherItem.querySelector('.accordion-content').style.maxHeight = null;
+                });
+                
+                // Open if it wasn't active
+                if (!isOpen) {
+                    item.classList.add('open');
+                    content.style.maxHeight = content.scrollHeight + "px";
+                }
+            });
+        });
+    </script>
+</body>
+</html>
