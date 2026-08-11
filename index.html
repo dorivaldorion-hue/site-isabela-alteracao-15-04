@@ -16,7 +16,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     <meta name="description" content="Pneumologista em Ipanema, Rio de Janeiro. Dra. Isabela Macêdo — Foco em Asma e Doenças Respiratórias. Formação UERJ. Rede D'or. Agende.">
     <meta property="og:title" content="Dra. Isabela Macêdo | Pneumologista em Ipanema — Foco em Asma | Rio de Janeiro">
     <meta property="og:description" content="Pneumologista em Ipanema, Rio de Janeiro. Dra. Isabela Macêdo — Foco em Asma e Doenças Respiratórias. Formação UERJ. Rede D'or. Agende.">
-    <meta property="og:image" content="https://res.cloudinary.com/dezwlu6p2/image/upload/v1774984218/Design_sem_nome_b7cp9t.webp">
+    <meta property="og:image" content="/images/dra-isabela.webp">
     <meta property="og:url" content="https://www.isabelamacedopneumologista.com.br">
     <link rel="canonical" href="https://www.isabelamacedopneumologista.com.br">
     
@@ -1214,19 +1214,25 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
         /* SECTION 8 - CONSULTÓRIO */
         .consultorio {
-            padding: 18vw 0;
+            padding: 16vw 0;
             background-color: var(--bg-section);
+        }
+        .consultorio-wrapper {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 6vw;
+            display: flex;
+            flex-direction: column;
+            gap: 8vw;
         }
         .consultorio-header {
             text-align: center;
-            margin-bottom: 8vw;
-            padding: 0 6vw;
         }
         .consultorio-title {
             font-family: 'Playfair Display', serif;
             font-size: 8.5vw;
             color: var(--text);
-            margin-bottom: 3vw;
+            margin-bottom: 2vw;
         }
         .consultorio-title span {
             font-weight: 500;
@@ -1241,17 +1247,18 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             font-size: 4vw;
         }
         .consultorio-photos {
-            display: flex;
-            flex-direction: column;
+            display: grid;
+            grid-template-columns: 1fr;
             gap: 4vw;
-            padding: 0 6vw;
-            margin-bottom: 8vw;
         }
         .photo-container {
             border-radius: 20px;
             overflow: hidden;
             position: relative;
             background-color: #eaeaea;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.04);
+            border: 1px solid rgba(111,52,83,0.08);
+            height: 60vw;
         }
         .photo-container img {
             width: 100%;
@@ -1261,67 +1268,157 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             transition: transform 0.8s cubic-bezier(0.25, 1, 0.5, 1);
         }
         .photo-container:hover img {
-            transform: scale(1.03);
+            transform: scale(1.04);
+        }
+        .photo-badge {
+            position: absolute;
+            bottom: 3.5vw;
+            left: 3.5vw;
+            background: rgba(255, 255, 255, 0.92);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            color: var(--text);
+            padding: 1.8vw 3.5vw;
+            border-radius: 50px;
+            font-size: 3.2vw;
+            font-weight: 500;
+            font-family: 'Inter', sans-serif;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            border: 1px solid rgba(255,255,255,0.7);
+            pointer-events: none;
         }
         .consultorio-info {
-            padding: 0 6vw;
-            display: flex;
-            flex-direction: column;
+            display: grid;
+            grid-template-columns: 1fr;
             gap: 6vw;
         }
-        .info-left {
+        .info-card {
+            background-color: #FFF8F6;
+            border: 1px solid rgba(111,52,83,0.1);
+            border-radius: 24px;
+            padding: 6vw;
             display: flex;
             flex-direction: column;
-            gap: 4vw;
+            justify-content: space-between;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.03);
         }
-        .address-box {
+        .info-card-header {
             display: flex;
-            align-items: flex-start;
-            gap: 3vw;
+            align-items: center;
+            gap: 3.5vw;
+            margin-bottom: 5vw;
         }
-        .address-icon {
+        .info-icon-badge {
+            width: 12vw;
+            height: 12vw;
+            border-radius: 14px;
+            background: rgba(111,52,83,0.1);
+            color: var(--primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+        .info-icon-badge svg {
             width: 6vw;
             height: 6vw;
             stroke: var(--primary);
-            flex-shrink: 0;
+        }
+        .info-card-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 5.5vw;
+            font-weight: 600;
+            color: var(--text);
+            margin: 0;
+        }
+        .info-card-sub {
+            font-family: 'Inter', sans-serif;
+            font-size: 3.4vw;
+            color: var(--secondary);
             margin-top: 0.5vw;
         }
-        .address-text {
+        .address-details {
+            background: rgba(255,255,255,0.8);
+            border-radius: 16px;
+            padding: 4vw;
+            margin-bottom: 5vw;
+            border: 1px solid rgba(111,52,83,0.06);
+        }
+        .address-main {
             font-family: 'Inter', sans-serif;
             font-size: 3.8vw;
-            line-height: 1.5;
-        }
-        .address-text strong {
-            color: var(--text);
             font-weight: 600;
-            display: block;
+            color: var(--text);
+            margin-bottom: 1vw;
+            line-height: 1.4;
         }
-        .address-text span {
-            color: var(--secondary);
-        }
-        .consultorio-complement {
+        .address-sub {
             font-family: 'Inter', sans-serif;
-            font-style: italic;
-            color: var(--secondary);
+            font-size: 3.4vw;
+            color: var(--tertiary);
+            line-height: 1.4;
+        }
+        .location-features {
+            list-style: none;
+            padding: 0;
+            margin: 0 0 6vw 0;
+            display: flex;
+            flex-direction: column;
+            gap: 3vw;
+        }
+        .location-features li {
+            display: flex;
+            align-items: center;
+            gap: 3vw;
+            font-family: 'Inter', sans-serif;
             font-size: 3.5vw;
-            line-height: 1.5;
+            color: var(--tertiary);
+        }
+        .location-features svg {
+            width: 5vw;
+            height: 5vw;
+            stroke: var(--primary);
+            flex-shrink: 0;
+        }
+        .route-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 2.5vw;
+            background-color: var(--primary);
+            color: #ffffff;
+            padding: 3.8vw 5vw;
+            border-radius: 50px;
+            font-family: 'Inter', sans-serif;
+            font-size: 3.6vw;
+            font-weight: 500;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(111,52,83,0.2);
+            text-align: center;
+        }
+        .route-btn svg {
+            width: 4.5vw;
+            height: 4.5vw;
+            stroke: currentColor;
         }
         .map-container {
             width: 100%;
-            border-radius: 16px;
+            border-radius: 24px;
             overflow: hidden;
-            height: 60vw;
+            position: relative;
+            border: 1px solid rgba(111,52,83,0.1);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.04);
+            height: 70vw;
             background-color: #eaeaea;
         }
         .map-container iframe {
             width: 100%;
             height: 100%;
             border: none;
-            filter: grayscale(100%);
+            filter: contrast(102%) saturate(105%);
             transition: filter 0.5s ease;
-        }
-        .map-container:hover iframe {
-            filter: grayscale(0%);
+            display: block;
         }
 
         /* SECTION 9 - FAQ */
@@ -1776,29 +1873,95 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
             /* Consultório Desktop */
             .consultorio { padding: 8vw 0; }
-            .consultorio-header { margin-bottom: 5vw; }
-            .consultorio-title { font-size: 3.5vw; margin-bottom: 1vw; }
-            .consultorio-subtitle { font-size: 1.2vw; }
-            .consultorio-photos { 
-                flex-direction: row; 
-                justify-content: space-between; 
-                align-items: flex-start; 
-                margin-bottom: 6vw; 
+            .consultorio-wrapper {
+                padding: 0 6vw;
+                gap: 2.5rem;
             }
-            .photo-1 { width: 58%; aspect-ratio: 16/9; }
-            .photo-2 { width: 36%; margin-top: 4vw; aspect-ratio: 4/5; }
-            .consultorio-info { 
-                flex-direction: row; 
-                align-items: center; 
-                justify-content: space-between; 
-                gap: 4vw; 
+            .consultorio-header { margin-bottom: 0; }
+            .consultorio-title { font-size: 3.5vw; margin-bottom: 0.5rem; }
+            .consultorio-subtitle { font-size: 1.1vw; }
+            .consultorio-photos {
+                grid-template-columns: 1.35fr 1fr;
+                gap: 1.8rem;
+                align-items: stretch;
             }
-            .info-left { width: 40%; gap: 2vw; }
-            .address-box { gap: 1.5vw; }
-            .address-icon { width: 2vw; height: 2vw; margin-top: 0.2vw; }
-            .address-text { font-size: 1.1vw; }
-            .consultorio-complement { font-size: 1vw; }
-            .map-container { width: 55%; height: 22vw; }
+            .photo-container {
+                height: 380px;
+                border-radius: 24px;
+            }
+            .photo-badge {
+                bottom: 1.25rem;
+                left: 1.25rem;
+                padding: 0.5rem 1.1rem;
+                font-size: 0.88rem;
+                border-radius: 50px;
+            }
+            .consultorio-info {
+                grid-template-columns: 1fr 1.15fr;
+                gap: 1.8rem;
+                align-items: stretch;
+            }
+            .info-card {
+                padding: 2.2rem;
+                border-radius: 24px;
+            }
+            .info-card-header {
+                gap: 1rem;
+                margin-bottom: 1.25rem;
+            }
+            .info-icon-badge {
+                width: 48px;
+                height: 48px;
+                border-radius: 12px;
+            }
+            .info-icon-badge svg {
+                width: 24px;
+                height: 24px;
+            }
+            .info-card-title {
+                font-size: 1.4rem;
+            }
+            .info-card-sub {
+                font-size: 0.85rem;
+            }
+            .address-details {
+                padding: 1.1rem 1.25rem;
+                margin-bottom: 1.25rem;
+                border-radius: 14px;
+            }
+            .address-main {
+                font-size: 1.05rem;
+                margin-bottom: 0.25rem;
+            }
+            .address-sub {
+                font-size: 0.88rem;
+            }
+            .location-features {
+                gap: 0.75rem;
+                margin-bottom: 1.5rem;
+            }
+            .location-features li {
+                gap: 0.75rem;
+                font-size: 0.9rem;
+            }
+            .location-features svg {
+                width: 18px;
+                height: 18px;
+            }
+            .route-btn {
+                padding: 0.85rem 1.4rem;
+                font-size: 0.92rem;
+                gap: 0.6rem;
+            }
+            .route-btn svg {
+                width: 18px;
+                height: 18px;
+            }
+            .map-container {
+                height: 100%;
+                min-height: 380px;
+                border-radius: 24px;
+            }
 
             /* FAQ Desktop */
             .faq { padding: 8vw 0; }
@@ -1920,8 +2083,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <main>
         <section class="hero" id="home">
             <div class="hero-image-container">
-                <img src="https://res.cloudinary.com/dezwlu6p2/image/upload/v1774983791/hf_20260331_190118_07d8f27f-22a1-435e-b8e6-315ed799d51f_dh7c2e.webp" alt="Consultório" class="hero-bg" referrerpolicy="no-referrer">
-                <img src="https://res.cloudinary.com/dezwlu6p2/image/upload/v1774984218/Design_sem_nome_b7cp9t.webp" alt="Dra. Isabela Macêdo" class="hero-photo" referrerpolicy="no-referrer">
+                <img src="/images/hero-bg.webp" alt="Consultório" class="hero-bg" referrerpolicy="no-referrer">
+                <img src="/images/dra-isabela.webp" alt="Dra. Isabela Macêdo" class="hero-photo" referrerpolicy="no-referrer">
                 <div class="hero-gradient"></div>
             </div>
             
@@ -1952,7 +2115,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             <div class="sobre-grid">
                 <div class="sobre-col-left reveal-img">
                     <div class="sobre-photo-container">
-                        <img src="https://res.cloudinary.com/dezwlu6p2/image/upload/q_auto,f_auto,w_600/v1774562420/IMG_9405_-_Isabela_Gomes_fr6ikw.webp" alt="Dra. Isabela Macêdo" class="sobre-photo" referrerpolicy="no-referrer">
+                        <img src="/images/sobre-isabela.webp" alt="Dra. Isabela Macêdo" class="sobre-photo" referrerpolicy="no-referrer">
                         <div class="sobre-photo-overlay"></div>
                         <div class="sobre-photo-text">
                             <div class="sobre-photo-name-wrapper">
@@ -2254,34 +2417,66 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         </section>
 
         <section class="consultorio" id="consultorio">
-            <div class="consultorio-header reveal-text">
-                <h2 class="consultorio-title"><span>O</span> <em>Consultório</em></h2>
-                <p class="consultorio-subtitle">Ipanema — no coração da zona sul carioca.</p>
-            </div>
-            
-            <div class="consultorio-photos reveal-img">
-                <div class="photo-container photo-1">
-                    <img src="https://res.cloudinary.com/dezwlu6p2/image/upload/q_auto,f_auto,w_600/v1774562420/4D5C18EA-FE82-41E7-AC7D-187A5601A496_-_Isabela_Gomes_odqrw9.webp" alt="Consultório Dra. Isabela Macêdo" referrerpolicy="no-referrer">
-                </div>
-                <div class="photo-container photo-2">
-                    <img src="https://res.cloudinary.com/dezwlu6p2/image/upload/q_auto,f_auto,w_600/v1774562420/IMG_6260_-_Isabela_Gomes_ecqwkl.webp" alt="Detalhe do Consultório" referrerpolicy="no-referrer">
-                </div>
-            </div>
-            
-            <div class="consultorio-info reveal-text">
-                <div class="info-left">
-                    <div class="address-box">
-                        <svg class="address-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
-                        <p class="address-text">
-                            <strong>Rua Visconde de Pirajá, 414 — Sala 608</strong>
-                            <span>Ipanema, Rio de Janeiro — RJ</span>
-                        </p>
-                    </div>
-                    <p class="consultorio-complement">Ambiente acolhedor, projetado para a melhor experiência durante sua consulta.</p>
+            <div class="consultorio-wrapper">
+                <div class="consultorio-header reveal-text">
+                    <h2 class="consultorio-title"><span>O</span> <em>Consultório</em></h2>
+                    <p class="consultorio-subtitle">Ipanema — no coração da zona sul carioca.</p>
                 </div>
                 
-                <div class="map-container">
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3672.7719748682977!2d-43.20658408441407!3d-22.983424146747185!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9bd501c5ccfc73%3A0x6b1cfb6a9c1e28be!2sR.%20Visc.%20de%20Piraj%C3%A1%2C%20414%20-%20Ipanema%2C%20Rio%20de%20Janeiro%20-%20RJ%2C%2022410-002!5e0!3m2!1spt-BR!2sbr!4v1689000000000!5m2!1spt-BR!2sbr" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                <div class="consultorio-photos reveal-img">
+                    <div class="photo-container photo-1">
+                        <img src="/images/consultorio-1.webp" alt="Consultório Dra. Isabela Macêdo" referrerpolicy="no-referrer">
+                        <div class="photo-badge">Atendimento Humanizado</div>
+                    </div>
+                    <div class="photo-container photo-2">
+                        <img src="/images/consultorio-2.webp" alt="Detalhe do Consultório" referrerpolicy="no-referrer">
+                        <div class="photo-badge">Espaço Climatizado</div>
+                    </div>
+                </div>
+                
+                <div class="consultorio-info reveal-text">
+                    <div class="info-card">
+                        <div>
+                            <div class="info-card-header">
+                                <div class="info-icon-badge">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+                                </div>
+                                <div>
+                                    <h3 class="info-card-title">Localização Privilegiada</h3>
+                                    <p class="info-card-sub">Ipanema — Rio de Janeiro</p>
+                                </div>
+                            </div>
+
+                            <div class="address-details">
+                                <p class="address-main">Rua Visconde de Pirajá, 414 — Sala 608</p>
+                                <p class="address-sub">Ipanema — Rio de Janeiro — RJ, CEP 22410-002</p>
+                            </div>
+
+                            <ul class="location-features">
+                                <li>
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s-8-4.5-8-11.8A8 8 0 0 1 12 2a8 8 0 0 1 8 8.2c0 7.3-8 11.8-8 11.8z"/><circle cx="12" cy="10" r="3"/></svg>
+                                    <span><strong>Metrô:</strong> Próximo à estação N. Sra. da Paz</span>
+                                </li>
+                                <li>
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M9 12h6"/><path d="M12 9v6"/></svg>
+                                    <span><strong>Acessibilidade:</strong> Edifício moderno com elevadores</span>
+                                </li>
+                                <li>
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+                                    <span><strong>Atendimento:</strong> Consultas com hora marcada</span>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <a href="https://maps.google.com/?q=Rua+Visconde+de+Piraj%C3%A1+414+Ipanema+Rio+de+Janeiro" target="_blank" rel="noopener noreferrer" class="route-btn">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="3 11 22 2 13 21 11 13 3 11"/></svg>
+                            Como Chegar no Google Maps
+                        </a>
+                    </div>
+                    
+                    <div class="map-container">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3672.7719748682977!2d-43.20658408441407!3d-22.983424146747185!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9bd501c5ccfc73%3A0x6b1cfb6a9c1e28be!2sR.%20Visc.%20de%20Piraj%C3%A1%2C%20414%20-%20Ipanema%2C%20Rio%20de%20Janeiro%20-%20RJ%2C%2022410-002!5e0!3m2!1spt-BR!2sbr!4v1689000000000!5m2!1spt-BR!2sbr" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div>
                 </div>
             </div>
         </section>
@@ -2345,8 +2540,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
         <section class="cta-final" id="agendar" data-theme="dark">
             <div class="cta-bg-container">
-                <img src="https://res.cloudinary.com/dezwlu6p2/image/upload/q_auto,f_auto,w_600/v1774645026/Female_doctor_with_202603271508_no0edg.jpg" alt="Dra. Isabela Macêdo" class="cta-bg-mobile" referrerpolicy="no-referrer">
-                <img src="https://res.cloudinary.com/dezwlu6p2/image/upload/q_auto,f_auto,w_1200/v1774645026/Female_doctor_with_202603271508_no0edg.jpg" alt="Dra. Isabela Macêdo" class="cta-bg-desktop" referrerpolicy="no-referrer">
+                <img src="/images/cta-mobile.webp" alt="Dra. Isabela Macêdo" class="cta-bg-mobile" referrerpolicy="no-referrer">
+                <img src="/images/cta-desktop.webp" alt="Dra. Isabela Macêdo" class="cta-bg-desktop" referrerpolicy="no-referrer">
                 <div class="cta-overlay"></div>
             </div>
             
